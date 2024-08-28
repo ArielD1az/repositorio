@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 
 app = Flask(__name__)
 
@@ -10,6 +10,11 @@ def index():
 @app.route('/clientes')
 def clientes():
    return render_template('clientes.html')
+
+
+@app.route('/inicio')
+def inicio():
+   return redirect('/')
 
 
 
