@@ -17,6 +17,11 @@ def inicio():
    return redirect('/')
 
 
+@app.route('/cargarclientes.html')
+def cargarclientes():
+   return render_template('cargarclientes.html')
+
+
 
 if __name__ == '__main__':
    app.run(debug=True)

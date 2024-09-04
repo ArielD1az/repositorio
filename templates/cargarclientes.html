@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Clientes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            }
+
+        .container {
+            background-color: #0000ff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 350px; /* Se ajusta el ancho */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #fff;
+            font-size: 24px; /* Se aumenta el tamaño del texto */
+            margin: 0;
+        }
+
+        .form {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /* Diseño en cuadrícula */
+            gap: 10px;
+        }
+
+        .form-item {
+            background-color: #e0e0e0;
+            color: #000;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+            grid-column: span 2; /* Cada elemento ocupa ambas columnas */
+        }
+
+        .add-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            grid-column: span 2; /* El botón ocupa ambas columnas */
+        }
+
+        .add-button button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            width: 50px;
+            height: 40px; /* Se ajusta la altura del botón */
+            font-size: 24px; /* Se ajusta el tamaño del texto del botón */
+            cursor: pointer;
+        }
+
+        .add-button button:hover {
+            background-color: #555;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CARGAR CLIENTES</h1>
+        </div>
+        <div class="form">
+            <div class="form-item">CANTIDAD DE ARTICULOS</div>
+            <div class="form-item">ARTICULOS</div>
+            <div class="form-item">NOMBRE</div>
+            <div class="form-item">DIRECCION</div>
+            <div class="add-button">
+                <button>+</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
