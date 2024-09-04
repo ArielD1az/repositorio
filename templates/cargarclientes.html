@@ -4,91 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cargar Clientes</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/style.css">
     <style>
         body{
-            margin: 0;
-            padding: 0;
-            background-color: #333;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #fff;
+            background-color: #212121;
+ 
             }
 
-        .container {
-            background-color: #0000ff;
-            border-radius: 10px;
-            padding: 20px;
-            width: 350px; /* Se ajusta el ancho */
-        }
 
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+        .cargarpos{
 
-        .header h1 {
-            color: #fff;
-            font-size: 24px; /* Se aumenta el tamaño del texto */
-            margin: 0;
-        }
 
-        .form {
-            display: grid;
-            grid-template-columns: 2fr 1fr; /* Diseño en cuadrícula */
-            gap: 10px;
+            position: relative;
+            left:50vh;
         }
+        ::-webkit-scrollbar{
 
-        .form-item {
-            background-color: #e0e0e0;
-            color: #000;
-            padding: 10px;
-            text-align: center;
-            font-weight: bold;
-            border-radius: 5px;
-            grid-column: span 2; /* Cada elemento ocupa ambas columnas */
+            display: none;
         }
+        .contenedortabla{
+                left:6%;
+                top: 100px;
+                position: absolute;
+                height: 20%;
+                background-color: #0B08C7;
+                border-radius: 15px;
+                width: 44%;
+            }
+            .titulotabla{
 
-        .add-button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            grid-column: span 2; /* El botón ocupa ambas columnas */
-        }
 
-        .add-button button {
-            background-color: #000;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            width: 50px;
-            height: 40px; /* Se ajusta la altura del botón */
-            font-size: 24px; /* Se ajusta el tamaño del texto del botón */
-            cursor: pointer;
-        }
+                left: 35%;
+                position: relative;
+            }
+            table{
+                border-radius: 15px;
+                background-color: #0B08C7;
+                border-collapse: collapse;
+            }
+            th{
+                position: relative;
+                padding-right:-50px;
+                padding-left: -50px;
+                position: relative;
+                font-size: xx-large;
+                border:2.5px solid white;
+            }
+            th,td,p{
+                position: relative;
+                color:white;
+                font-family: koulen;
+                font-weight: 100;
+            }
+            td{
+                border-right: 2px white solid;
 
-        .add-button button:hover {
-            background-color: #555;
-        }
 
+            }
+            td:last-child{
+
+                border-right: 0;
+            }
+            .pos{
+                background-color: #0B08C7;
+                position: relative;
+                top: 60vh;
+                width: 430px;
+                left: 20vh;
+                border-radius: 10px;
+            }
+            .Nombre{
+                top:-10px;
+                border: 1px;
+                outline: none;
+                padding-bottom: 2px;
+                margin-bottom: 4px;
+                left: 50px;
+                position: relative;
+                font-family: koulen;
+                text-align: center;
+                color:black;
+                z-index: 2;
+            }
+            .botoncargar{
+                transition-duration: 0.5s;
+                position: fixed;
+                z-index: 3;
+                font-family: koulen;
+                font-weight: 400;
+                font-size: 100px;
+                width: 130px;
+                left: 48%;
+                height: 76px;
+                line-height: 76px;
+                background-color: #212121;
+                color: #FFFF;
+                border: 2px solid #FFFF;
+                border-radius: 30px;
+                text-align:center;
+                cursor: pointer;
+                top: 75%;
+            }
+            .titulo{
+                position: relative;
+                background-color: #020081;
+                border-radius: 12px;
+                font-size: x-large;
+                
+            }
+            .titulo2{
+
+                left: 33%;
+            }
+            .botoncargar:hover{
+
+                transition-duration: 0.5s;
+                background-color: rgb(24, 185, 24);
+            }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>CARGAR CLIENTES</h1>
-        </div>
-        <div class="form">
-            <div class="form-item">CANTIDAD DE ARTICULOS</div>
-            <div class="form-item">ARTICULOS</div>
-            <div class="form-item">NOMBRE</div>
-            <div class="form-item">DIRECCION</div>
-            <div class="add-button">
-                <button>+</button>
-            </div>
+    <div class="cargarpos">
+  
+            
+        
+        
+                <div class="contenedortabla">
+                    <table width="100%">
+                        <p class="titulotabla">clientes ya cargados</p>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Domicilio</th>
+                                <th>Pedido</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <td align="center">pedro alvarado</td>
+                            <td align="center">Luis pasteur 1320</td>
+                            <td align="center">Cucurucho de dulce de leche</td>
+                            <td align="center">10</td>
+                        </tbody>
+                        <tbody>
+                            <td align="center">Juan Miguel</td>
+                            <td align="center">sarmiento 2205</td>
+                            <td align="center">Helado de agua sabor a limon</td>
+                            <td align="center">3</td>
+                
+                        </tbody>
+                        <tbody>
+                            <td align="center">Juan Miguel</td>
+                            <td align="center">sarmiento 2205</td>
+                            <td align="center">Helado de agua sabor a limon</td>
+                            <td align="center" >3</td>
+                
+                        </tbody>
+                
+                    </table>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="pos">
+                        <div class="titulo">
+                    <p class="titulo2">CARGAR CLIENTES</p>
+                </div>
+                    <div class="Menuagrega">
+                        <form action="/cargar" method="post"><input class="Nombre" type="text" placeholder="cantidad de articulos"><br><input class="Nombre" type="text" placeholder="articulos"><button class="botoncargar">+</button><br><input class="Nombre" type="text" placeholder="Nombre"><br><input class="Nombre" type="text" placeholder="direccion"></form>
+                        
+                    </div>
         </div>
     </div>
 </body>
