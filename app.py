@@ -1,4 +1,12 @@
 from flask import Flask, render_template, redirect
+import mysql.connector
+conexion=mysql.connector.connect(
+      host="localhost",
+      user="root",
+      password="root",
+      database="esquemabrido"
+)
+cursor=conexion.cursor()
 
 app = Flask(__name__)
 
