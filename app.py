@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect
 import mysql.connector
 conexion=mysql.connector.connect(
-      host="localhost",
+      host="127.0.0.1",
       user="root",
       password="root",
       database="esquemabrido"
@@ -9,8 +9,14 @@ conexion=mysql.connector.connect(
 cursor=conexion.cursor()
 
 app = Flask(__name__)
-
-
+#
+@app.route('/prueba')
+def prueba():
+   query="SELECT * FROM cliente"
+   cursor.execute(query)
+   clientes=cursor.fetchall()
+   print("prueba: ",clientes)
+   return render_template('index.html')
 
 @app.route('/')
 def index():
@@ -32,4 +38,4 @@ def cargarclientes():
 
 
 if __name__ == '__main__':
-   app.run(debug=True)
+   app.run(host='0.0.0.0',port=5000,debug=True)
