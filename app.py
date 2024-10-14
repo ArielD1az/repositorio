@@ -31,11 +31,13 @@ def inicio():
    return redirect('/')
 
 
-@app.route('/cargarclientes.html')
+
+@app.route('/cargarclientes')
 def cargarclientes():
    return render_template('cargarclientes.html')
-
-
+@app.route('/modificarclientes')
+def modificarclientes():
+   return render_template('modificarclientes.html')
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0',port=5000,debug=True)
