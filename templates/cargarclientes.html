@@ -84,7 +84,7 @@
                 left: 50px;
                 position: relative;
                 font-family: koulen;
-                text-align: center;
+                text-align:center;
                 color:black;
                 z-index: 2;
             }
@@ -172,7 +172,27 @@
                     <p class="titulo2">CARGAR CLIENTES</p>
                 </div>
                     <div class="Menuagrega">
-                        <form action="/cargar" method="post"><input class="Nombre" type="text" placeholder="cantidad de articulos"><br><input class="Nombre" type="text" placeholder="articulos"><button class="botoncargar">+</button><br><input class="Nombre" type="text" placeholder="Nombre"><br><input class="Nombre" type="text" placeholder="direccion"></form>
+                        <form action="{{url_for('cargar')}}" method="post">
+                            <label for="CantidadArt">
+                            <input class="Nombre" name="CantidadArt" type="number" placeholder="cantidad de articulos">
+                            </label>
+                            <br>
+                            <label for="Articulos">
+                            <input class="Nombre" name="Articulos" type="text" placeholder="articulos">
+                            
+                        </label>
+                            
+                            
+                            <br>
+                            <label for="Nombre">
+                            <input class="Nombre" name="Nombre" type="text" placeholder="Nombre">
+                            </label>
+                            <br>
+                            <label for="direccion">
+                            <input class="Nombre" name="direccion" text" placeholder="direccion">
+                            </label>
+                            <input class="botoncargar" type="submit" value="+">
+                        </form>
                         
                     </div>
                     

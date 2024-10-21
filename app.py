@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 import mysql.connector
 conexion=mysql.connector.connect(
       host="127.0.0.1",
@@ -38,6 +38,17 @@ def cargarclientes():
 @app.route('/modificarclientes')
 def modificarclientes():
    return render_template('modificarclientes.html')
+
+@app.route('/cargar',methods=['POST'])
+def cargar():
+   nombre=request.form.get('Nombre')
+   cant=request.form.get('CantidadArt')
+   articulo=request.form.get('Articulos')
+   direccion=request.form.get('direccion')
+   print(nombre,"\n",cant,"\n",articulo,"\n",direccion)
+   return redirect('/')
+   
+
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0',port=5000,debug=True)
