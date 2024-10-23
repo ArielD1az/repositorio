@@ -4,7 +4,8 @@ conexion=mysql.connector.connect(
       host="127.0.0.1",
       user="root",
       password="root",
-      database="esquemabrido"
+      database="esquemabrido",
+      
 )
 cursor=conexion.cursor()
 
@@ -41,14 +42,26 @@ def modificarclientes():
 
 @app.route('/cargar',methods=['POST'])
 def cargar():
+   
    nombre=request.form.get('Nombre')
    cant=request.form.get('CantidadArt')
    articulo=request.form.get('Articulos')
    direccion=request.form.get('direccion')
+   query=f"INSERT INTO cliente(NombreApellido) values('{nombre}');"
+   cursor.execute(query)
    print(nombre,"\n",cant,"\n",articulo,"\n",direccion)
    return redirect('/')
    
 
 
 if __name__ == '__main__':
+   ascii_art = """
+███████ ███████ ██████  ██    ██ ███████ ██████      ██ ███████      ██████  ███    ██ 
+██      ██      ██   ██ ██    ██ ██      ██   ██     ██ ██          ██    ██ ████   ██ 
+███████ █████   ██████  ██    ██ █████   ██████      ██ ███████     ██    ██ ██ ██  ██ 
+     ██ ██      ██   ██  ██  ██  ██      ██   ██     ██      ██     ██    ██ ██  ██ ██ 
+███████ ███████ ██   ██   ████   ███████ ██   ██     ██ ███████      ██████  ██   ████
+"""
+
+   print(ascii_art)
    app.run(host='0.0.0.0',port=5000,debug=True)
