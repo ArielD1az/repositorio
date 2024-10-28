@@ -1,4 +1,5 @@
 from flask import Flask, render_template, redirect, request
+import os
 import mysql.connector
 conexion=mysql.connector.connect(
       host="127.0.0.1",
@@ -47,7 +48,7 @@ def cargar():
    cant=request.form.get('CantidadArt')
    articulo=request.form.get('Articulos')
    direccion=request.form.get('direccion')
-   query=f"INSERT INTO cliente(NombreApellido) values('{nombre}');"
+   query=[f"INSERT INTO cliente(NombreApellido) values('{nombre}');","INSERT INTO producto(NombreProducto)"]
    cursor.execute(query)
    print(nombre,"\n",cant,"\n",articulo,"\n",direccion)
    return redirect('/')
@@ -55,13 +56,23 @@ def cargar():
 
 
 if __name__ == '__main__':
+   os.system("cls")
    ascii_art = """
-███████ ███████ ██████  ██    ██ ███████ ██████      ██ ███████      ██████  ███    ██ 
-██      ██      ██   ██ ██    ██ ██      ██   ██     ██ ██          ██    ██ ████   ██ 
-███████ █████   ██████  ██    ██ █████   ██████      ██ ███████     ██    ██ ██ ██  ██ 
+███████ ███████ ██████  ██    ██ ███████ ██████      ██ ███████      ██████  ███    ██      
+██      ██      ██   ██ ██    ██ ██      ██   ██     ██ ██          ██    ██ ████   ██        
+███████ █████   ██████  ██    ██ █████   ██████      ██ ███████     ██    ██ ██ ██  ██       
      ██ ██      ██   ██  ██  ██  ██      ██   ██     ██      ██     ██    ██ ██  ██ ██ 
-███████ ███████ ██   ██   ████   ███████ ██   ██     ██ ███████      ██████  ██   ████
+███████ ███████ ██   ██   ████   ███████ ██   ██     ██ ███████      ██████  ██   ████   
 """
-
-   print(ascii_art)
+   papu="""             ___      ___ 
+ ___        |\  \    /  /|
+|\__\       \ \  \  /  / /
+\|__|        \ \  \/  / / 
+    ___       \ \    / /  
+   |\__\       \ \__/ /   
+   \|__|        \|__|/ 
+   
+   """
+   print(ascii_art+papu)
    app.run(host='0.0.0.0',port=5000,debug=True)
+   
