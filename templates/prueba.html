@@ -1,0 +1,34 @@
+<html lang="es">  
+<head>
+    <meta charset="UTF-8">
+    <title>Brido Prueba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+    .tabla{
+
+        color:red
+    }
+    .columna1{
+        top: 58px;
+        left: 190px;
+        color:green;
+        position: fixed;
+    }
+
+
+    </style>
+</head>
+<body>
+<div class=tabla>
+<h1>prueba DB: </h1>
+{%for cliente in clientes%}
+    {%for atributo in cliente%}
+    {{atributo}}
+    {%endfor%}
+    <br>
+{%endfor%}
+
+</div>
+</div>
+</html>

@@ -11,14 +11,17 @@ conexion=mysql.connector.connect(
 cursor=conexion.cursor()
 
 app = Flask(__name__)
-#
+
 @app.route('/prueba')
 def prueba():
    query="SELECT * FROM cliente"
    cursor.execute(query)
+   query="SELECT * FROM producto"
+   cursor.execute(query)
    clientes=cursor.fetchall()
+   producto=cursor.fetchall()
    print("prueba: ",clientes)
-   return render_template('index.html')
+   return render_template('prueba.html', clientes=clientes)
 
 @app.route('/')
 def index():
