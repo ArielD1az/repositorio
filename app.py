@@ -16,12 +16,18 @@ app = Flask(__name__)
 def prueba():
    query="SELECT * FROM cliente"
    cursor.execute(query)
-   query="SELECT * FROM producto"
-   cursor.execute(query)
    clientes=cursor.fetchall()
-   producto=cursor.fetchall()
-   print("prueba: ",clientes)
-   return render_template('prueba.html', clientes=clientes)
+   conexion.commit()
+   
+   
+   #cursor=conexion.cursor()
+   query="SELECT Articulos,Cantidad from pedido"
+   cursor.execute(query)
+   
+   productos=cursor.fetchall()
+
+   print("prueba: ",clientes,"\n",productos)
+   return render_template('prueba.html', clientes=clientes, productos=productos)
 
 @app.route('/')
 def index():

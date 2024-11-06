@@ -5,30 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
     <style>
-    .tabla{
-
-        color:red
-    }
-    .columna1{
-        top: 58px;
-        left: 190px;
-        color:green;
-        position: fixed;
+<style>
+    .tabla {
+        width: 100%;
+        max-width: 600px;
+        margin: 20px auto;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
     }
 
+    table {
+        width: 100%;
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+    }
 
-    </style>
+    caption {
+        caption-side: top;
+        font-weight: bold;
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+        border: 1px solid #ccc;
+    }
+
+    th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+</style>
+
 </head>
 <body>
-<div class=tabla>
-<h1>prueba DB: </h1>
-{%for cliente in clientes%}
-    {%for atributo in cliente%}
-    {{atributo}}
-    {%endfor%}
-    <br>
-{%endfor%}
-
-</div>
+    <div class="tabla">
+        <table>
+            <caption>Prueba DB:</caption>
+            <thead class="titulotabla">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Dirección</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                    <tr>
+                        {% for atributo in cliente %}
+                            <td>{{ atributo }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+    
+                {% for producto in productos %}
+                    <tr>
+                        {% for atributo in producto %}
+                            <td>{{ atributo }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
 </div>
 </html>
