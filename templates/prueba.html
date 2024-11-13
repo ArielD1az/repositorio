@@ -6,41 +6,69 @@
     <link rel="stylesheet" href="/static/style.css">
     <style>
 <style>
-    .tabla {
-        width: 100%;
-        max-width: 600px;
+/* Estilos generales para las tablas */
+table {
+    width: 80%;
         margin: 20px auto;
         border-collapse: collapse;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         font-family: Arial, sans-serif;
     }
 
-    table {
-        width: 100%;
-        border: 1px solid #ccc;
-        border-collapse: collapse;
-    }
-
+    /* Encabezado de la tabla */
     caption {
-        caption-side: top;
+        font-size: 1.5em;
         font-weight: bold;
-        font-size: 1.2em;
+        color: #0400FF;
         padding: 10px;
     }
 
-    th, td {
+    /* Encabezados de las columnas */
+    th {
+        background-color: #0400FF;
+        color: #fff;
+        padding: 12px;
+        text-align: left;
+        border-bottom: 2px solid #003399;
+    }
+
+    /* Filas de la tabla */
+    td {
         padding: 10px;
         text-align: left;
-        border: 1px solid #ccc;
+        border-bottom: 1px solid #d9d9d9;
     }
 
-    th {
-        background-color: #f4f4f4;
-        font-weight: bold;
-    }
-
+    /* Colores alternos para las filas */
     tbody tr:nth-child(even) {
-        background-color: #f9f9f9;
+        background-color: #f2f2ff;
     }
+
+    /* Efecto hover en las filas */
+    tbody tr:hover {
+        background-color: #e0e0ff;
+        cursor: pointer;
+    }
+
+    /* Bordes redondeados */
+    table,
+    th,
+    td {
+        border-radius: 5px;
+    }
+
+    /* Ajuste para la tabla en pantallas pequeñas */
+    @media (max-width: 768px) {
+        table {
+            width: 100%;
+        }
+        th,
+        td {
+            font-size: 0.9em;
+            padding: 8px;
+        }
+    }
+
 </style>
 
 </head>
@@ -50,9 +78,9 @@
             <caption>Prueba DB:</caption>
             <thead class="titulotabla">
                 <tr>
+                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Dirección</th>
-                    <th>Cantidad</th>
                 </tr>
             </thead>
             <tbody>
@@ -63,7 +91,17 @@
                         {% endfor %}
                     </tr>
                 {% endfor %}
-    
+            </tbody>
+        </table>
+        
+        <table>
+            <thead class="titulotabla2">
+                <tr>
+                    <th>decripcion</th>
+                    <th>cant</th>
+                </tr>
+            </thead>
+            <tbody>
                 {% for producto in productos %}
                     <tr>
                         {% for atributo in producto %}
@@ -74,6 +112,7 @@
             </tbody>
         </table>
     </div>
-    
+
+</body>
 </div>
 </html>
