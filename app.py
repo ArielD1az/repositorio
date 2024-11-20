@@ -57,9 +57,10 @@ def cargar():
    cant=request.form.get('CantidadArt')
    articulo=request.form.get('Articulos')
    direccion=request.form.get('direccion')
+   print(nombre,"\n",cant,"\n",articulo,"\n",direccion)
    query=[f"INSERT INTO cliente(NombreApellido) values('{nombre}');","INSERT INTO producto(NombreProducto)"]
    cursor.execute(query)
-   print(nombre,"\n",cant,"\n",articulo,"\n",direccion)
+   
    return redirect('/')
    
 

@@ -4,15 +4,16 @@
     <title>Brido Prueba</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
-    <style>
+   
 <style>
 /* Estilos generales para las tablas */
 table {
-    width: 80%;
+    width: 35%;
         margin: 20px auto;
         border-collapse: collapse;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        font-family: Arial, sans-serif;
+        border-top: 0px;
+                
     }
 
     /* Encabezado de la tabla */
@@ -29,24 +30,32 @@ table {
         color: #fff;
         padding: 12px;
         text-align: left;
+        font-weight: 100;
+        font-family: rammeto;
         border-bottom: 2px solid #003399;
+        border-top: 0px;
     }
 
     /* Filas de la tabla */
     td {
         padding: 10px;
         text-align: left;
+        
         border-bottom: 1px solid #d9d9d9;
     }
 
     /* Colores alternos para las filas */
     tbody tr:nth-child(even) {
-        background-color: #f2f2ff;
+        background-color: #ececff;
     }
-
+    tbody tr {
+        transition-duration: 0.4s;
+        font-family: koulen;
+        background-color: #ececff;
+    }
     /* Efecto hover en las filas */
     tbody tr:hover {
-        background-color: #e0e0ff;
+        background-color: #8a8aff;
         cursor: pointer;
     }
 
@@ -54,8 +63,14 @@ table {
     table,
     th,
     td {
-        border-radius: 5px;
+        text-align: center;
+        border-radius: 2px;
+        border: #000000 solid 1px;
+        border-bottom: 0px;
+        
+        border-right: #000000;
     }
+   
 
     /* Ajuste para la tabla en pantallas pequeñas */
     @media (max-width: 768px) {
@@ -97,8 +112,8 @@ table {
         <table>
             <thead class="titulotabla2">
                 <tr>
-                    <th>decripcion</th>
-                    <th>cant</th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
                 </tr>
             </thead>
             <tbody>
